@@ -1,0 +1,27 @@
+.my-team {
+  margin: 0px 35px;
+}
+
+.dashboard {
+  margin: 35px;
+}
+
+.action {
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-header-cell,
+.mat-cell {
+  width: 25%;
+}

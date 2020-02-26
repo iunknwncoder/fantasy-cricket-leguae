@@ -1,0 +1,125 @@
+<mat-card-title class="selectTeam">
+    <mat-form-field>
+        <mat-select [(ngModel)]="battingTeam" placeholder="Batting Team">
+            <mat-option *ngFor="let team of teams" [value]="team">
+                {{ team }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field> v/s
+    <mat-form-field>
+        <mat-select [(ngModel)]="bowlingTeam" placeholder="Bowling Team">
+            <mat-option *ngFor="let team of teams" [value]="team">
+                {{ team }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</mat-card-title>
+<mat-card>
+    <mat-form-field>
+        <mat-select [(ngModel)]="player1.name" placeholder="Batting Player 1">
+            <mat-option *ngFor="let player of getBattingTeamPlayers()" [value]="player">
+                {{ player.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-card-content>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player1.batting.runs" (keyup)="updateBattingPoints(player1)" placeholder='Runs'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player1.batting.fours" (keyup)="updateBattingPoints(player1)" placeholder='Fours'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player1.batting.sixes" (keyup)="updateBattingPoints(player1)" placeholder='Sixes'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player1.batting.twentyfive" (keyup)="updateBattingPoints(player1)" placeholder='25s'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player1.batting.fifties" (keyup)="updateBattingPoints(player1)" placeholder='50s'>
+        </mat-form-field>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-form-field>
+        <mat-select [(ngModel)]="player2.name" placeholder="Batting Player 2">
+            <mat-option *ngFor="let player of getBattingTeamPlayers()" [value]="player">
+                {{ player.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-card-content>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player2.batting.runs" (keyup)="updateBattingPoints(player2)"
+                placeholder='Runs'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player2.batting.fours" (keyup)="updateBattingPoints(player2)"
+                placeholder='Fours'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player2.batting.sixes" (keyup)="updateBattingPoints(player2)"
+                placeholder='Sixes'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player2.batting.twentyfive" (keyup)="updateBattingPoints(player2)"
+                placeholder='25s'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player2.batting.fifties" (keyup)="updateBattingPoints(player2)"
+                placeholder='50s'>
+        </mat-form-field>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-form-field>
+        <mat-select [(ngModel)]="player3.name" placeholder="Bowler">
+            <mat-option *ngFor="let player of getBowlingTeamPlayers()" [value]="player">
+                {{ player.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-card-content>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player3.bowling.wickets" (keyup)="updateBowlingPoints(player3)"
+                placeholder='Wickets'>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="player3.bowling.wickets3" (keyup)="updateBowlingPoints(player3)"
+                placeholder='3 Wickets'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player3.bowling.wickets5" (keyup)="updateBowlingPoints(player3)"
+                placeholder='5 Wickets'>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="player3.bowling.wickets7" (keyup)="updateBowlingPoints(player3)"
+                placeholder='7 Wickets'>
+        </mat-form-field>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-form-field>
+        <mat-select [(ngModel)]="player4.name" placeholder="Fielder">
+            <mat-option *ngFor="let player of getBowlingTeamPlayers()" [value]="player">
+                {{ player.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-card-content>
+        <mat-form-field>
+            <input matInput [(ngModel)]="player4.fielding.catches" (keyup)="updateFieldingPoints(player4)"
+                placeholder='Catches'>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="player4.fielding.stumping" (keyup)="updateFieldingPoints(player4)"
+                placeholder='Stumping'>
+        </mat-form-field>
+    </mat-card-content>
+</mat-card>
