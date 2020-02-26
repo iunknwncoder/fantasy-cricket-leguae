@@ -6,6 +6,9 @@ import { ScorerComponent } from './scorer/scorer.component';
 
 
 const routes: Routes = [{
+  path: '',
+  component: MyTeamComponent
+}, {
   path: 'myteam',
   component: MyTeamComponent
 },

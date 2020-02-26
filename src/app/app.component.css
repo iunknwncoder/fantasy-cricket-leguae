@@ -43,6 +43,35 @@
   border-radius: 4px;
 }
 
+.app-card-selected {
+  height: 112px;
+  padding: 12px;
+  background-color: #eb5e33 !important;
+  color: #ffffff !important;
+  font-size: 36px;
+}
+
+.app-card-boarded {
+  height: 112px;
+  padding: 12px;
+  background-color: #3a7e31 !important;
+  color: #ffffff !important;
+  font-size: 36px;
+}
+
+.app-card-draft {
+  height: 112px;
+  padding: 12px;
+  background-color: #ffbf00 !important;
+  color: #ffffff !important;
+  font-size: 36px;
+}
+
+.content {
+  padding: 75px;
+  text-align: center;
+}
+
 @media (max-width: 600px) {
   .header {
     overflow: hidden;
