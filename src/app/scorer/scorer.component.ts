@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayersService } from '../players.service';
 import playerDetails from '../../assets/players.json';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-scorer',
@@ -10,7 +11,6 @@ import playerDetails from '../../assets/players.json';
 export class ScorerComponent implements OnInit {
   playersData: any;
   constructor(private playersService: PlayersService) {
-    this.playersService.updatePlayerScore(playerDetails);
   }
   battingTeam = '';
   bowlingTeam = '';
@@ -20,9 +20,7 @@ export class ScorerComponent implements OnInit {
     'batting': {
       'runs': 0,
       'fours': 0,
-      'sixes': 0,
-      'twentyfive': 0,
-      'fifties': 0
+      'sixes': 0
     }
   }
 
@@ -31,23 +29,14 @@ export class ScorerComponent implements OnInit {
     'batting': {
       'runs': 0,
       'fours': 0,
-      'sixes': 0,
-      'twentyfive': 0,
-      'fifties': 0
+      'sixes': 0
     }
   }
 
   player3 = {
     'name': '',
     'bowling': {
-      'wickets': 0,
-      'wickets3': 0,
-      'wickets5': 0,
-      'wickets7': 0
-    },
-    'fielding': {
-      'catches': 0,
-      'stumping': 0
+      'wickets': 0
     }
   }
 
@@ -69,19 +58,87 @@ export class ScorerComponent implements OnInit {
   }
 
   getBowlingTeamPlayers() {
-    return this.playersData.find(p => p.team === this.bowlingTeam);
+    return this.playersData.filter(p => p.team === this.bowlingTeam);
+  }
+
+  checkTeams(type) {
+    if (this.battingTeam === this.bowlingTeam) {
+      alert('You have selected both the same team');
+
+      if (type === 'batting') {
+        this.bowlingTeam = '';
+      } else {
+        this.battingTeam = '';
+      }
+    }
+  }
+
+  changePlayer(player) {
+    if (player == '1') {
+      this.player1 = {
+        'name': this.player1.name,
+        'batting': {
+          'runs': 0,
+          'fours': 0,
+          'sixes': 0
+        }
+      }
+    } else if (player == '2') {
+      this.player2 = {
+        'name': this.player2.name,
+        'batting': {
+          'runs': 0,
+          'fours': 0,
+          'sixes': 0
+        }
+      }
+    }
+    else if (player == '3') {
+      this.player3 = {
+        'name': this.player3.name,
+        'bowling': {
+          'wickets': 0
+        }
+      }
+    } else {
+      this.player4 = {
+        'name': this.player4.name,
+        'fielding': {
+          'catches': 0,
+          'stumping': 0
+        }
+      }
+    }
   }
 
   updateBattingPoints(player) {
     this.playersData.map(p => {
       if (p.name === player.name) {
-        p.points = p.points + (player.batting.runs * 0.5 + player.batting.fours * 0.5 + player.batting.sixes * 1 + player.batting.twentyfive * 4 + player.batting.fifties * 8)
+        console.log(p.points);
+        p.points = +p.points + (+player.batting.runs * 0.5 + +player.batting.fours * 0.5 + +player.batting.sixes * 1 + (+player.batting.runs % 25) * 4 + (+player.batting.runs % 50) * 8)
       }
     })
-    this.playersService.updatePlayerScore(this.playersData);
   }
 
-  updateBowlingPoints(player) { }
+  updateBowlingPoints(player) {
+    this.playersData.map(p => {
+      if (p.name === player.name) {
+        p.points = +p.points + (+player.bowling.wickets * 6)
+      }
+    })
+  }
 
-  updateFieldingPoints(player) { }
+  updateFieldingPoints(player) {
+    this.playersData.map(p => {
+      if (p.name === player.name) {
+        p.points = +p.points + (+player.fielding.catches * 1 + +player.fielding.stumping * 1)
+      }
+    })
+  }
+
+  updatePoints() {
+    console.log(this.playersData);
+    const blob = new Blob([JSON.stringify(this.playersData)], { type: 'application/json' });
+    saveAs(blob, 'update-points');
+  }
 }

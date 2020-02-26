@@ -1,4 +1,4 @@
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8 content">
     <mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="myName">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
@@ -12,7 +12,7 @@
 
         <ng-container matColumnDef="points">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Points</mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{ calculatePoints(row) }} </mat-cell>
+            <mat-cell *matCellDef="let row"> {{ row.points }} </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -21,4 +21,10 @@
     </mat-table>
 
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100, 200]"></mat-paginator>
+</div>
+
+<div class="action">
+    <button mat-raised-button color="primary" class="download-button" (click)="downloadFileTop10()">Download Top
+        10</button>
+    <button mat-raised-button color="primary" class="download-button" (click)="downloadFile()">Download All</button>
 </div>

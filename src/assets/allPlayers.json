@@ -1,5 +1,658 @@
 [
-{"teamName":"avanish","myName":"sdsd","owner":{"name":"Balachandra Gopal","team":"Roaring Lions"},"captain":{"name":"Sharan S","team":"Hotshots"},"players":[{"name":"Nishanth Rajanna","team":"Skarp Elva","gender":"M","cost":"2.8"},{"name":"Anup","team":"Ninjas","gender":"M","cost":"0.7"},{"name":"Krishna","team":"Daredevils","gender":"M","cost":"0.1"}]},
-{"teamName":"sundeep","myName":"sdsdsdff","owner":{"name":"Vivek Purekar","team":"TNT"},"captain":{"name":"Mrinal Thakur","team":"Roaring Lions"},"players":[{"name":"Nishanth Rajanna","team":"Skarp Elva","gender":"M","cost":"2.8"},{"name":"Anup","team":"Ninjas","gender":"M","cost":"0.7"},{"name":"Krishna","team":"Daredevils","gender":"M","cost":"0.1"},{"name":"Pranav","team":"TNT","gender":"M","cost":"6.1"}]},
-{"teamName":"test1","myName":"test","owner":{"name":"Jisson Jose","team":"Daredevils","points":"0"},"captain":{"name":"Pratith Shetty","team":"TNT","points":"0"},"players":[{"name":"Sujith J","gender":"M","team":"Daredevils","cost":"13.75","points":"0"},{"name":"Harsh Upadhyay","gender":"M","team":"The Assassinators","cost":"12","points":"0"},{"name":"Kotesh Dundigala","gender":"M","team":"Daredevils","cost":"10","points":"0"}]}
+    {
+        "teamName": "Team1",
+        "myName": "sdsd",
+        "owner": {
+            "name": "Balachandra Gopal",
+            "team": "Roaring Lions"
+        },
+        "captain": {
+            "name": "Sharan S",
+            "team": "Hotshots"
+        },
+        "players": [
+            {
+                "name": "Nishanth Rajanna",
+                "team": "Skarp Elva",
+                "gender": "M",
+                "cost": "2.8"
+            },
+            {
+                "name": "Anup",
+                "team": "Ninjas",
+                "gender": "M",
+                "cost": "0.7"
+            },
+            {
+                "name": "Krishna",
+                "team": "Daredevils",
+                "gender": "M",
+                "cost": "0.1"
+            }
+        ]
+    },
+    {
+        "teamName": "Team2",
+        "myName": "sdsdsdff",
+        "owner": {
+            "name": "Vivek Purekar",
+            "team": "TNT"
+        },
+        "captain": {
+            "name": "Mrinal Thakur",
+            "team": "Roaring Lions"
+        },
+        "players": [
+            {
+                "name": "Nishanth Rajanna",
+                "team": "Skarp Elva",
+                "gender": "M",
+                "cost": "2.8"
+            },
+            {
+                "name": "Anup",
+                "team": "Ninjas",
+                "gender": "M",
+                "cost": "0.7"
+            },
+            {
+                "name": "Krishna",
+                "team": "Daredevils",
+                "gender": "M",
+                "cost": "0.1"
+            },
+            {
+                "name": "Pranav",
+                "team": "TNT",
+                "gender": "M",
+                "cost": "6.1"
+            }
+        ]
+    },
+    {
+        "teamName": "Team3",
+        "myName": "test",
+        "owner": {
+            "name": "Jisson Jose",
+            "team": "Daredevils",
+            "points": "0"
+        },
+        "captain": {
+            "name": "Pratith Shetty",
+            "team": "TNT",
+            "points": "0"
+        },
+        "players": [
+            {
+                "name": "Sujith J",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "13.75",
+                "points": "0"
+            },
+            {
+                "name": "Harsh Upadhyay",
+                "gender": "M",
+                "team": "The Assassinators",
+                "cost": "12",
+                "points": "0"
+            },
+            {
+                "name": "Kotesh Dundigala",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "10",
+                "points": "0"
+            }
+        ]
+    },
+    {
+        "teamName": "Team4",
+        "myName": "sdsd",
+        "owner": {
+            "name": "Balachandra Gopal",
+            "team": "Roaring Lions"
+        },
+        "captain": {
+            "name": "Sharan S",
+            "team": "Hotshots"
+        },
+        "players": [
+            {
+                "name": "Nishanth Rajanna",
+                "team": "Skarp Elva",
+                "gender": "M",
+                "cost": "2.8"
+            },
+            {
+                "name": "Anup",
+                "team": "Ninjas",
+                "gender": "M",
+                "cost": "0.7"
+            },
+            {
+                "name": "Krishna",
+                "team": "Daredevils",
+                "gender": "M",
+                "cost": "0.1"
+            }
+        ]
+    },
+    {
+        "teamName": "Team5",
+        "myName": "sdsdsdff",
+        "owner": {
+            "name": "Vivek Purekar",
+            "team": "TNT"
+        },
+        "captain": {
+            "name": "Mrinal Thakur",
+            "team": "Roaring Lions"
+        },
+        "players": [
+            {
+                "name": "Nishanth Rajanna",
+                "team": "Skarp Elva",
+                "gender": "M",
+                "cost": "2.8"
+            },
+            {
+                "name": "Anup",
+                "team": "Ninjas",
+                "gender": "M",
+                "cost": "0.7"
+            },
+            {
+                "name": "Krishna",
+                "team": "Daredevils",
+                "gender": "M",
+                "cost": "0.1"
+            },
+            {
+                "name": "Pranav",
+                "team": "TNT",
+                "gender": "M",
+                "cost": "6.1"
+            }
+        ]
+    },
+    {
+        "teamName": "Team6",
+        "myName": "test",
+        "owner": {
+            "name": "Jisson Jose",
+            "team": "Daredevils",
+            "points": "0"
+        },
+        "captain": {
+            "name": "Pratith Shetty",
+            "team": "TNT",
+            "points": "0"
+        },
+        "players": [
+            {
+                "name": "Sujith J",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "13.75",
+                "points": "0"
+            },
+            {
+                "name": "Harsh Upadhyay",
+                "gender": "M",
+                "team": "The Assassinators",
+                "cost": "12",
+                "points": "0"
+            },
+            {
+                "name": "Kotesh Dundigala",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "10",
+                "points": "0"
+            }
+        ]
+    },
+    {
+        "teamName": "Team7",
+        "myName": "sdsd",
+        "owner": {
+            "name": "Balachandra Gopal",
+            "team": "Roaring Lions"
+        },
+        "captain": {
+            "name": "Sharan S",
+            "team": "Hotshots"
+        },
+        "players": [
+            {
+                "name": "Nishanth Rajanna",
+                "team": "Skarp Elva",
+                "gender": "M",
+                "cost": "2.8"
+            },
+            {
+                "name": "Anup",
+                "team": "Ninjas",
+                "gender": "M",
+                "cost": "0.7"
+            },
+            {
+                "name": "Krishna",
+                "team": "Daredevils",
+                "gender": "M",
+                "cost": "0.1"
+            }
+        ]
+    },
+    {
+        "teamName": "Team8",
+        "myName": "sdsdsdff",
+        "owner": {
+            "name": "Vivek Purekar",
+            "team": "TNT"
+        },
+        "captain": {
+            "name": "Mrinal Thakur",
+            "team": "Roaring Lions"
+        },
+        "players": [
+            {
+                "name": "Nishanth Rajanna",
+                "team": "Skarp Elva",
+                "gender": "M",
+                "cost": "2.8"
+            },
+            {
+                "name": "Anup",
+                "team": "Ninjas",
+                "gender": "M",
+                "cost": "0.7"
+            },
+            {
+                "name": "Krishna",
+                "team": "Daredevils",
+                "gender": "M",
+                "cost": "0.1"
+            },
+            {
+                "name": "Pranav",
+                "team": "TNT",
+                "gender": "M",
+                "cost": "6.1"
+            }
+        ]
+    },
+    {
+        "teamName": "Team9",
+        "myName": "test",
+        "owner": {
+            "name": "Jisson Jose",
+            "team": "Daredevils",
+            "points": "0"
+        },
+        "captain": {
+            "name": "Pratith Shetty",
+            "team": "TNT",
+            "points": "0"
+        },
+        "players": [
+            {
+                "name": "Sujith J",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "13.75",
+                "points": "0"
+            },
+            {
+                "name": "Harsh Upadhyay",
+                "gender": "M",
+                "team": "The Assassinators",
+                "cost": "12",
+                "points": "0"
+            },
+            {
+                "name": "Kotesh Dundigala",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "10",
+                "points": "0"
+            }
+        ]
+    },
+    {
+        "teamName": "Team10",
+        "myName": "sdsd",
+        "owner": {
+            "name": "Balachandra Gopal",
+            "team": "Roaring Lions"
+        },
+        "captain": {
+            "name": "Sharan S",
+            "team": "Hotshots"
+        },
+        "players": [
+            {
+                "name": "Nishanth Rajanna",
+                "team": "Skarp Elva",
+                "gender": "M",
+                "cost": "2.8"
+            },
+            {
+                "name": "Anup",
+                "team": "Ninjas",
+                "gender": "M",
+                "cost": "0.7"
+            },
+            {
+                "name": "Krishna",
+                "team": "Daredevils",
+                "gender": "M",
+                "cost": "0.1"
+            }
+        ]
+    },
+    {
+        "teamName": "Team11",
+        "myName": "sdsdsdff",
+        "owner": {
+            "name": "Vivek Purekar",
+            "team": "TNT"
+        },
+        "captain": {
+            "name": "Mrinal Thakur",
+            "team": "Roaring Lions"
+        },
+        "players": [
+            {
+                "name": "Nishanth Rajanna",
+                "team": "Skarp Elva",
+                "gender": "M",
+                "cost": "2.8"
+            },
+            {
+                "name": "Anup",
+                "team": "Ninjas",
+                "gender": "M",
+                "cost": "0.7"
+            },
+            {
+                "name": "Krishna",
+                "team": "Daredevils",
+                "gender": "M",
+                "cost": "0.1"
+            },
+            {
+                "name": "Pranav",
+                "team": "TNT",
+                "gender": "M",
+                "cost": "6.1"
+            }
+        ]
+    },
+    {
+        "teamName": "Team12",
+        "myName": "test",
+        "owner": {
+            "name": "Jisson Jose",
+            "team": "Daredevils",
+            "points": "0"
+        },
+        "captain": {
+            "name": "Pratith Shetty",
+            "team": "TNT",
+            "points": "0"
+        },
+        "players": [
+            {
+                "name": "Sujith J",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "13.75",
+                "points": "0"
+            },
+            {
+                "name": "Harsh Upadhyay",
+                "gender": "M",
+                "team": "The Assassinators",
+                "cost": "12",
+                "points": "0"
+            },
+            {
+                "name": "Kotesh Dundigala",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "10",
+                "points": "0"
+            }
+        ]
+    },
+    {
+        "teamName": "Team13",
+        "myName": "sdsd",
+        "owner": {
+            "name": "Balachandra Gopal",
+            "team": "Roaring Lions"
+        },
+        "captain": {
+            "name": "Sharan S",
+            "team": "Hotshots"
+        },
+        "players": [
+            {
+                "name": "Nishanth Rajanna",
+                "team": "Skarp Elva",
+                "gender": "M",
+                "cost": "2.8"
+            },
+            {
+                "name": "Anup",
+                "team": "Ninjas",
+                "gender": "M",
+                "cost": "0.7"
+            },
+            {
+                "name": "Krishna",
+                "team": "Daredevils",
+                "gender": "M",
+                "cost": "0.1"
+            }
+        ]
+    },
+    {
+        "teamName": "Team14",
+        "myName": "sdsdsdff",
+        "owner": {
+            "name": "Vivek Purekar",
+            "team": "TNT"
+        },
+        "captain": {
+            "name": "Mrinal Thakur",
+            "team": "Roaring Lions"
+        },
+        "players": [
+            {
+                "name": "Nishanth Rajanna",
+                "team": "Skarp Elva",
+                "gender": "M",
+                "cost": "2.8"
+            },
+            {
+                "name": "Anup",
+                "team": "Ninjas",
+                "gender": "M",
+                "cost": "0.7"
+            },
+            {
+                "name": "Krishna",
+                "team": "Daredevils",
+                "gender": "M",
+                "cost": "0.1"
+            },
+            {
+                "name": "Pranav",
+                "team": "TNT",
+                "gender": "M",
+                "cost": "6.1"
+            }
+        ]
+    },
+    {
+        "teamName": "Team15",
+        "myName": "test",
+        "owner": {
+            "name": "Jisson Jose",
+            "team": "Daredevils",
+            "points": "0"
+        },
+        "captain": {
+            "name": "Pratith Shetty",
+            "team": "TNT",
+            "points": "0"
+        },
+        "players": [
+            {
+                "name": "Sujith J",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "13.75",
+                "points": "0"
+            },
+            {
+                "name": "Harsh Upadhyay",
+                "gender": "M",
+                "team": "The Assassinators",
+                "cost": "12",
+                "points": "0"
+            },
+            {
+                "name": "Kotesh Dundigala",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "10",
+                "points": "0"
+            }
+        ]
+    },
+    {
+        "teamName": "Sundeep Team",
+        "myName": "Sundeep",
+        "owner": {
+            "name": "Arjun Dev",
+            "team": "Simeio Spirits",
+            "points": "0"
+        },
+        "captain": {
+            "name": "Sumukh M",
+            "team": "Simeio Spirits",
+            "points": "0"
+        },
+        "players": [
+            {
+                "name": "Chakrapani Adepu",
+                "gender": "M",
+                "team": "Hotshots",
+                "cost": "8.5",
+                "points": "0"
+            },
+            {
+                "name": "Kartheek Jagadisan",
+                "gender": "M",
+                "team": "Hotshots",
+                "cost": "6",
+                "points": "0"
+            },
+            {
+                "name": "Sanya Goswami",
+                "gender": "F",
+                "team": "Hotshots",
+                "cost": "4.5",
+                "points": "0"
+            },
+            {
+                "name": "Kushal G V",
+                "gender": "M",
+                "team": "Hotshots",
+                "cost": "4.5",
+                "points": "0"
+            },
+            {
+                "name": "Avinash Radhakrishnan",
+                "gender": "M",
+                "team": "Hotshots",
+                "cost": "2.1",
+                "points": "0"
+            },
+            {
+                "name": "Rehaman Shaik",
+                "gender": "M",
+                "team": "Hotshots",
+                "cost": "1",
+                "points": "0"
+            },
+            {
+                "name": "Kaustubh Kiran Kulkarni",
+                "gender": "M",
+                "team": "Hotshots",
+                "cost": "0.7",
+                "points": "0"
+            },
+            {
+                "name": "Bhajaman Samal",
+                "gender": "M",
+                "team": "Hotshots",
+                "cost": "0.65",
+                "points": "0"
+            },
+            {
+                "name": "Avanish S Mishra",
+                "gender": "M",
+                "team": "Hotshots",
+                "cost": "0.6",
+                "points": "0"
+            },
+            {
+                "name": "Sumanth Vankadara",
+                "gender": "M",
+                "team": "Hotshots",
+                "cost": "0.45",
+                "points": "0"
+            },
+            {
+                "name": "Archana Prabhakar Mallick",
+                "gender": "F",
+                "team": "Hotshots",
+                "cost": "0.2",
+                "points": "0"
+            },
+            {
+                "name": "Gunasundari Anandan",
+                "gender": "F",
+                "team": "Hotshots",
+                "cost": "0.15",
+                "points": "0"
+            },
+            {
+                "name": "Sudheer Subrahmanyam Kaneti",
+                "gender": "M",
+                "team": "Hotshots",
+                "cost": "0.15",
+                "points": "0"
+            },
+            {
+                "name": "Kamesh Pinaka",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "0.1",
+                "points": "0"
+            },
+            {
+                "name": "Pabitra Borah",
+                "gender": "M",
+                "team": "Daredevils",
+                "cost": "0.1",
+                "points": "0"
+            }
+        ]
+    }
 ]

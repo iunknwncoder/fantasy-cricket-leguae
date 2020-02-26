@@ -1,79 +1,87 @@
+<div class="sticky">
+  <h1>Total Selected Players: {{ this.selection.selected.length }}</h1>
+  <h1>Total Selected Players Cost : {{ totalSelectedCost }}</h1>
+</div>
 <div class="my-team">
-    <form [formGroup]="teamForm">
-      <mat-form-field>
-        <mat-label>Your Team Name</mat-label>
-        <input matInput required formControlName="teamName" type="text" placeholder="Enter Your Team Name">
-      </mat-form-field>
+  <form [formGroup]="teamForm">
+    <mat-form-field>
+      <mat-label>Your Team Name</mat-label>
+      <input matInput required formControlName="teamName" type="text" placeholder="Enter Your Team Name">
+    </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>Your Name</mat-label>
-        <input matInput required type="text" formControlName="yourName" placeholder="Enter Your Team Name">
-      </mat-form-field>
+    <mat-form-field>
+      <mat-label>Your Name</mat-label>
+      <input matInput required type="text" formControlName="yourName" placeholder="Enter Your Team Name">
+    </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>Select Team Owner</mat-label>
-        <mat-select placeholder="Select Owner" required formControlName="owner">
-          <mat-option *ngFor="let owner of owners" [value]="owner">
-            {{ owner.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+    <mat-label style="color: red">*You can select Owner and Captain from different teams</mat-label>
+    <mat-form-field>
+      <mat-label>Select Team Owner</mat-label>
+      <mat-select placeholder="Select Owner" required formControlName="owner">
+        <mat-option *ngFor="let owner of owners" [value]="owner">
+          {{ owner.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>Select Team Captain</mat-label>
-        <mat-select placeholder="Select Captain" required formControlName="captain">
-          <mat-option *ngFor="let captain of captains" [value]="captain">
-            {{captain.name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select Team Captain</mat-label>
+      <mat-select placeholder="Select Captain" required formControlName="captain">
+        <mat-option *ngFor="let captain of captains" [value]="captain">
+          {{captain.name}}
+        </mat-option>
+      </mat-select>
 
-      <mat-form-field>
-        <mat-label>Search player by name or team</mat-label>
-        <input matInput type="text" (keyup)="applyFilter($event)" placeholder="Search Player">
-      </mat-form-field>
+    </mat-form-field>
 
-      <div class="mat-elevation-z8">
-        <mat-table [dataSource]="dataSource" matSort>
-          <ng-container matColumnDef="select">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-            <mat-cell *matCellDef="let row">
-              <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
-                [checked]="selection.isSelected(row)">
-              </mat-checkbox>
-            </mat-cell>
-          </ng-container>
+    <mat-label style="color: red">*You need to have minimum 15 players, minimum 3 women and do it under 30 crores
+    </mat-label>
+    <mat-form-field>
+      <mat-label>Search player by name or team</mat-label>
+      <input matInput type="text" (keyup)="applyFilter($event)" placeholder="Search Player">
+    </mat-form-field>
 
-          <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
-          </ng-container>
+    <div class="mat-elevation-z8">
+      <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="select">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+              (change)="$event ? selection.toggle(row) : null; updateCost($event, row)" [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+          </mat-cell>
+        </ng-container>
 
-          <ng-container matColumnDef="team">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Team </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.team}} </mat-cell>
-          </ng-container>
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+        </ng-container>
 
-          <ng-container matColumnDef="gender">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Gender </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.gender}} </mat-cell>
-          </ng-container>
+        <ng-container matColumnDef="team">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Team </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.team}} </mat-cell>
+        </ng-container>
 
-          <ng-container matColumnDef="cost">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Cost </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.cost}} </mat-cell>
-          </ng-container>
+        <ng-container matColumnDef="gender">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Gender </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.gender}} </mat-cell>
+        </ng-container>
 
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: displayedColumns;">
-          </mat-row>
-        </mat-table>
+        <ng-container matColumnDef="cost">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Cost </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.cost}} </mat-cell>
+        </ng-container>
 
-        <mat-paginator [pageSizeOptions]="[15, 25, 50, 100, 200]"></mat-paginator>
-      </div>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+      </mat-table>
 
-      <div class="action">
-        <button mat-raised-button color="primary" (click)="submit()">Submit Team</button>
-      </div>
-    </form>
-  </div>
+      <mat-paginator [pageSizeOptions]="[15, 25, 50, 100, 200]"></mat-paginator>
+    </div>
+
+    <div class="action">
+      <button mat-raised-button color="primary" (click)="submit()">Submit Team</button>
+    </div>
+  </form>
+</div>

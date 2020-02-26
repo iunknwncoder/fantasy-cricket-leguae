@@ -8,10 +8,17 @@ export class PlayersService {
 
   constructor() { }
 
-  playerService: BehaviorSubject<any> = new BehaviorSubject([]);
-  public readonly players: Observable<any> = this.playerService.asObservable();
+  players: BehaviorSubject<any> = new BehaviorSubject([]);
+  public readonly totalPlayers: Observable<any> = this.players.asObservable();
 
-  updatePlayerScore(playerDetails) {
-    this.playerService.next(playerDetails);
+  playerCost: BehaviorSubject<any> = new BehaviorSubject(0);
+  public readonly totalPlayerCost: Observable<any> = this.playerCost.asObservable();
+
+  updatePlayerCost(cost) {
+    this.playerCost.next(cost);
+  }
+
+  updatePlayersCount(count) {
+    this.playerCost.next(count);
   }
 }

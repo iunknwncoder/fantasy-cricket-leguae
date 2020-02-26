@@ -25,3 +25,15 @@
 .mat-cell {
   width: 25%;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: 35px;
+  z-index: 999;
+  height: 50px;
+  color: #cc3813;
+  font-size: 12px;
+  font-weight: bold;
+}

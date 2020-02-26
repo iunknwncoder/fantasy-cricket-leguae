@@ -9,6 +9,5 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'simeio-cricket-fantasy-league';
   constructor(public router: Router) {
-
   }
 }

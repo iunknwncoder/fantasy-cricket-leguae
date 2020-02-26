@@ -7,6 +7,7 @@ import playerDetails from '../../assets/players.json';
 
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { saveAs } from 'file-saver';
+import { PlayersService } from '../players.service.js';
 
 @Component({
   selector: 'app-my-team',
@@ -20,6 +21,7 @@ export class MyTeamComponent implements OnInit {
   allocatedCost = 30;
   minimumGirls = 3;
   minimumPlayers = 15;
+  totalSelectedCost = 0;
 
   displayedColumns: string[] = ['select', 'name', 'team', 'gender', 'cost'];
   dataSource: MatTableDataSource<any>;
@@ -32,7 +34,7 @@ export class MyTeamComponent implements OnInit {
 
   allowToSubmit = false;
 
-  constructor(public dialog: MatDialog, public formBuilder: FormBuilder) {
+  constructor(public dialog: MatDialog, public formBuilder: FormBuilder, private playersService: PlayersService) {
   }
 
   ngOnInit() {
@@ -58,6 +60,14 @@ export class MyTeamComponent implements OnInit {
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
+    }
+  }
+
+  updateCost(action, player) {
+    if (action.checked) {
+      this.totalSelectedCost = this.totalSelectedCost + +player.cost;
+    } else {
+      this.totalSelectedCost = this.totalSelectedCost - +player.cost;
     }
   }
 
