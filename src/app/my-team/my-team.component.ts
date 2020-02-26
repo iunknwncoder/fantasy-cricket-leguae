@@ -33,6 +33,7 @@ export class MyTeamComponent implements OnInit {
   teamForm: FormGroup;
 
   allowToSubmit = false;
+  displayPointSystem = false;
 
   constructor(public dialog: MatDialog, public formBuilder: FormBuilder, private playersService: PlayersService) {
   }

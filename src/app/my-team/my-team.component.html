@@ -1,8 +1,63 @@
-<div class="sticky">
-  <h1>Total Selected Players: {{ this.selection.selected.length }}</h1>
-  <h1>Total Selected Players Cost : {{ totalSelectedCost }}</h1>
+<div style="margin-left: 35px;">
+  <button mat-raised-button color="primary" (click)="displayPointSystem = true" *ngIf="!displayPointSystem">Points
+    System</button>
+  <button mat-raised-button color="primary" (click)="displayPointSystem = false" *ngIf="displayPointSystem">Team
+    Details</button>
 </div>
-<div class="my-team">
+<div style="margin: 35px" *ngIf="displayPointSystem">
+  <mat-list-item>
+    <mat-hint>Batting</mat-hint>
+  </mat-list-item>
+  <mat-list class="subList" dense>
+    <mat-list-item>0.5 points for every run scored</mat-list-item>
+    <mat-list-item>Overall runs will be multiplied by (strike rate / 100)</mat-list-item>
+    <mat-list-item>0.5 points bonus for every 4</mat-list-item>
+    <mat-list-item>1 points bonus for every 6</mat-list-item>
+    <mat-list-item>4 points bonus for 25 runs</mat-list-item>
+    <mat-list-item>8 point bonus for 50 runs</mat-list-item>
+  </mat-list>
+
+  <mat-list-item>
+    <mat-hint>Bowling</mat-hint>
+  </mat-list-item>
+  <mat-list class="subList" dense>
+    <mat-list-item>6 points for every wicket (Except run out)</mat-list-item>
+    <mat-list-item>4 points bonus for 3 wickets</mat-list-item>
+    <mat-list-item>6 points bonus for 5 wickets</mat-list-item>
+    <mat-list-item>10 points bonus for 7 wickets</mat-list-item>
+  </mat-list>
+
+  <mat-list-item>
+    <mat-hint>Fielding</mat-hint>
+  </mat-list-item>
+  <mat-list class="subList" dense>
+    <mat-list-item>1 point for every catch</mat-list-item>
+    <mat-list-item>1 point for every stumping</mat-list-item>
+  </mat-list>
+
+  <mat-list-item>
+    <mat-hint>Owner</mat-hint>
+  </mat-list-item>
+  <mat-list class="subList" dense>
+    <mat-list-item>8 point bonus for winning league match</mat-list-item>
+    <mat-list-item>15 point bonus for winning Finals</mat-list-item>
+    <mat-list-item>8 point bonus for runner up in the tournament</mat-list-item>
+  </mat-list>
+
+  <mat-list-item>
+    <mat-hint>Captain</mat-hint>
+  </mat-list-item>
+  <mat-list class="subList" dense>
+    <mat-list-item>8 point bonus for winning league match</mat-list-item>
+    <mat-list-item>15 point bonus for winning Finals</mat-list-item>
+    <mat-list-item>8 point bonus for runner up in the tournament</mat-list-item>
+  </mat-list>
+</div>
+<div class="my-team" *ngIf="!displayPointSystem">
+  <div class="sticky">
+    <h1>Total Selected Players: {{ this.selection.selected.length }}</h1>
+    <h1>Total Selected Players Cost : {{ totalSelectedCost }}</h1>
+  </div>
   <form [formGroup]="teamForm">
     <mat-form-field>
       <mat-label>Your Team Name</mat-label>
@@ -47,7 +102,8 @@
           <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
           <mat-cell *matCellDef="let row">
             <mat-checkbox (click)="$event.stopPropagation()"
-              (change)="$event ? selection.toggle(row) : null; updateCost($event, row)" [checked]="selection.isSelected(row)">
+              (change)="$event ? selection.toggle(row) : null; updateCost($event, row)"
+              [checked]="selection.isSelected(row)">
             </mat-checkbox>
           </mat-cell>
         </ng-container>
