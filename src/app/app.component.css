@@ -79,6 +79,7 @@
   }
 
   .header img {
+    display: none;
     padding-left: 0px;
   }
 

@@ -39,6 +39,7 @@ export class MyTeamComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.displayPointSystem = false;
     this.owners = ownerDetails;
     this.captains = captainetails;
     this.players = playerDetails;
@@ -50,9 +51,25 @@ export class MyTeamComponent implements OnInit {
       captain: new FormControl('', [Validators.required])
     });
 
+    this.sortArray();
     this.dataSource = new MatTableDataSource<any>(this.players);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  sortArray() {
+    this.players.sort(function (a, b) {
+      const x = a.points;
+      const y = b.points;
+
+      if (x === y) {
+        return 0;
+      }
+      if (typeof x === typeof y) {
+        return x > y ? -1 : 1;
+      }
+      return typeof x < typeof y ? -1 : 1;
+    });
   }
 
   applyFilter(event: Event) {
@@ -67,6 +84,9 @@ export class MyTeamComponent implements OnInit {
   updateCost(action, player) {
     if (action.checked) {
       this.totalSelectedCost = this.totalSelectedCost + +player.cost;
+      if (this.totalSelectedCost > this.allocatedCost) {
+        alert('You have exceed your allocated cost.');
+      }
     } else {
       this.totalSelectedCost = this.totalSelectedCost - +player.cost;
     }

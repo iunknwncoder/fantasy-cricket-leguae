@@ -2,7 +2,11 @@
   margin: 0px 35px;
 }
 
-.dashboard {
+.point-button {
+  margin-left: 35px;
+}
+
+.point-system {
   margin: 35px;
 }
 
@@ -23,12 +27,12 @@
 
 .mat-header-cell,
 .mat-cell {
-  width: 25%;
+  width: auto;
 }
 
 .sticky {
   position: fixed;
-  top: 0;
+  top: 60px;
   right: 0;
   margin-right: 35px;
   z-index: 999;
@@ -38,7 +42,7 @@
   font-weight: bold;
 }
 
-.mat-list{
+.mat-list {
   margin: 10px;
   width: max-content;
 }
@@ -47,7 +51,7 @@
   padding-left: 25px !important;
 }
 
-.mat-list[dense] .mat-subheader{
+.mat-list[dense] .mat-subheader {
   line-height: 15px;
   height: 35px;
 }
@@ -62,4 +66,40 @@
 
 .subList {
   margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .my-team {
+    margin: 5px;
+  }
+
+  .point-button {
+    margin-left: 5px;
+  }
+
+  .point-system {
+    margin: 5px;
+  }
+
+  .action {
+    justify-content: center;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .mat-table {
+    width: 100%;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 85px;
+    right: 0;
+    margin-right: 10px;
+    z-index: 999;
+    height: 50px;
+    color: #cc3813;
+    font-size: 7px;
+    font-weight: bold;
+  }
 }
